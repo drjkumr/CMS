@@ -10,7 +10,12 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(PlayerNotFoundException.class)
     public ResponseEntity<String> handlePlayerNotFound(PlayerNotFoundException ex) {
-        return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);  //Not found exception for non-existing player
+    }
+
+    @ExceptionHandler(InvalidJerseyNumberException.class)
+    public ResponseEntity<String> handleInvalidJerseyNumber(InvalidJerseyNumberException ex) {
+        return new ResponseEntity<>(ex.getMessage(), HttpStatus.BAD_REQUEST); //BAD request for handling if jersey number > 22 or < 1
     }
 
 }

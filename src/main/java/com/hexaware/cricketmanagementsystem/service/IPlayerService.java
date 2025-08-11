@@ -16,5 +16,4 @@ public interface IPlayerService {
 
     Player updatePlayer(int id, Player updatedPlayer);
 
-
 }

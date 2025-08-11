@@ -1,13 +1,29 @@
 package com.hexaware.cricketmanagementsystem.dto;
 
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
+
+
+//changelog: Regex was not implemented, now implemented for data validation.
 public class PlayerDTO {
 
+    @NotNull(message="playerID is required")
     private int playerID;
+    @NotBlank(message="playerName is Required")
+    @Pattern(regexp= "^[A-Za-z ] {2,75}$")
     private String playerName;
+    @NotNull 
     private int jerseyNumber;
+    @NotBlank
+    @Pattern(regexp="^(Batsman|Bowler|Allrounder|WicketKeeper)$")
     private String role;
+    @NotNull @Min(0)
     private int totalMatches;
+    @Pattern(regexp= "^[A-Za-z ] {2,75}$")
     private String teamName;
+    @Pattern(regexp="^(England|India|Australia|New Zealand)$")
     private String countryStateName;
 
     public PlayerDTO() {

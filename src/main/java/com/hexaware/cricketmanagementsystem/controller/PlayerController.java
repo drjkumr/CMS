@@ -56,7 +56,8 @@ public class PlayerController {
 
     @PutMapping("/update/{id}") // Here we create an object for updating all fields
     public Player updatePlayer(@PathVariable int id, @RequestBody PlayerDTO playerDTO) {
-    Player updatedPlayer = new Player(
+    
+        Player updatedPlayer = new Player(
             playerDTO.getPlayerID(),
             playerDTO.getPlayerName(),
             playerDTO.getJerseyNumber(),
