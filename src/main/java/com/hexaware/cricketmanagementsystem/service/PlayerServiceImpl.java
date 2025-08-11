@@ -34,4 +34,20 @@ public class PlayerServiceImpl implements IPlayerService {
         playerRepo.deleteById(id);
     }
 
+    @Override
+    public Player updatePlayer(int id, Player updatedPlayer) {
+        Player existingPlayer = playerRepo.findById(id).orElse(null);
+        if (existingPlayer != null) {
+            existingPlayer.setPlayerName(updatedPlayer.getPlayerName());
+            existingPlayer.setJerseyNumber(updatedPlayer.getJerseyNumber());
+            existingPlayer.setRole(updatedPlayer.getRole());
+            existingPlayer.setTotalMatches(updatedPlayer.getTotalMatches());
+            existingPlayer.setTeamName(updatedPlayer.getTeamName());
+            existingPlayer.setCountryStateName(updatedPlayer.getCountryStateName());
+            return playerRepo.save(existingPlayer);
+        }
+        return null;
+    }
+
+
 }

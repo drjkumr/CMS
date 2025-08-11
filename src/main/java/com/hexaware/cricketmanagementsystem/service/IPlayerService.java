@@ -14,4 +14,7 @@ public interface IPlayerService {
 
     void deletePlayer(int id);
 
+    Player updatePlayer(int id, Player updatedPlayer);
+
+
 }

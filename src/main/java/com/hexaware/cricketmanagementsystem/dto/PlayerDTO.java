@@ -3,7 +3,7 @@ package com.hexaware.cricketmanagementsystem.dto;
 public class PlayerDTO {
 
     private int playerID;
-    private String PlayerName;
+    private String playerName;
     private int jerseyNumber;
     private String role;
     private int totalMatches;
@@ -16,7 +16,7 @@ public class PlayerDTO {
     public PlayerDTO(int playerID, String playerName, int jerseyNumber, String role, int totalMatches, String teamName,
             String countryStateName) {
         this.playerID = playerID;
-        PlayerName = playerName;
+        this.playerName = playerName;
         this.jerseyNumber = jerseyNumber;
         this.role = role;
         this.totalMatches = totalMatches;
@@ -33,11 +33,11 @@ public class PlayerDTO {
     }
 
     public String getPlayerName() {
-        return PlayerName;
+        return playerName;
     }
 
-    public void setPlayerName(String playerName) {
-        PlayerName = playerName;
+    public void setpPayerName(String playerName) {
+        this.playerName = playerName;
     }
 
     public int getJerseyNumber() {
